@@ -32,3 +32,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Ofertia TODO List
+
+### Create a simple movie browser where user can
+
+1. Search for movies
+2. Search can start with just 2 letters
+3. Search is autocomplete
+4. The result is using pagination
+5. Please follow the design layout as above using styling
+
+### Create details page where user can
+
+1. Click on the selected movie from the list and see movie details
+2. Each movie will have details, poster, and add to fav. Button
+3. Fav. Button will add a move to your favourites list
+
+### Create favourites list page where
+
+1. User can see list of previously added movies
+2. Remove given movie from favourites
+3. Undo his remove action
+   Please store your favourite movie list in a simple NodeJS server (you
+   create) or local storage.
