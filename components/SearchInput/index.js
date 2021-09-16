@@ -8,17 +8,30 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const SearchInput = () => {
   const [value, setValue] = useState("");
   const [listVisible, setListVisible] = useState(false);
+  const [[currentResults, totalResults, currentPage], setResults] = useState([
+    0, 0, 1,
+  ]);
+
   const handleChangeInput = (event) => {
     setValue(event.target.value);
+    setResults([currentResults, totalResults, 1]);
   };
+
   const { data } = useSwr(
-    value.length ? `/api/movies/${value}` : null,
+    value.length ? `/api/movies/${value}?page=${currentPage}` : null,
     fetcher
   );
+
   const checkListShouldBeVisible = (data) => {
     if (data?.Search?.length > 0) {
-      setListVisible(true);
+      console.log("resu;ts ", data);
+      setResults([data.Search.length, Number(data.totalResults), currentPage]);
     }
+  };
+
+  const handlePageChange = (selectedPage) => {
+    console.log("current page ", selectedPage);
+    setResults([currentResults, totalResults, selectedPage]);
   };
 
   useEffect(() => {
@@ -45,8 +58,13 @@ const SearchInput = () => {
           />
         )}
       </div>
-      <MovieCardList movieList={data?.Search} />
-      {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+      <MovieCardList
+        movieList={data?.Search}
+        itemsPerPage={currentResults}
+        maxItems={totalResults}
+        currentPage={currentPage}
+        handlePageChange={handlePageChange}
+      />
     </div>
   );
 };

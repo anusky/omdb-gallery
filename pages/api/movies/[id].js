@@ -21,12 +21,14 @@
 
 export default async function handler(req, res) {
   // http://img.omdbapi.com/?s=batman&apikey=ec20d40e
-  //   console.log("params ", req.query);
+  //&page-${req.query.page}
+  console.log("params ", req.query);
   if (req.query.id.length <= 2) {
     res.status(200).json({ loading: true });
   } else {
     try {
-      const URL = `https://omdbapi.com/?s=${req.query.id}&apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;
+      const { id, page = 1 } = req.query;
+      const URL = `https://omdbapi.com/?s=${id}&page=${page}&apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;
       const response = await fetch(URL).then((res) => res.json());
 
       if (response.Error) {

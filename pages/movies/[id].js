@@ -1,8 +1,17 @@
-import SearchInput from "../components/SearchInput";
+import MovieCard from "@/components/MovieCard";
+import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Image from "next/image";
+import useSwr from "swr";
 
-const HomeContainer = () => {
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
+export default function MoviesPage({}) {
+  const router = useRouter();
+  const { data } = useSwr(
+    router.query.id ? `/api/hello?id=${router.query.id}` : null,
+    fetcher
+  );
   return (
     <div className="container mx-auto">
       <Head>
@@ -11,8 +20,9 @@ const HomeContainer = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="">
-        <SearchInput />
+      <main className="p-6">
+        {data && <MovieCard {...data} />}
+        <pre>{JSON.stringify(data, null, 2)}</pre>
       </main>
 
       <footer className="">
@@ -29,8 +39,4 @@ const HomeContainer = () => {
       </footer>
     </div>
   );
-};
-
-export default function Home({ fallback }) {
-  return <HomeContainer />;
 }

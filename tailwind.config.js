@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        "moviecard-info-container": "3fr 1fr",
+        "moviecard-container": "3fr 1fr",
+      },
+      width: {
+        "fit-content": "fit-content",
       },
       height: {
         "fit-content": "fit-content",

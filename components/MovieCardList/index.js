@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { array } from "prop-types";
+import Link from "next/link";
 
 import { string } from "prop-types";
 import useSwr from "swr";
+import Pagination from "./Pagination";
 
 // export async function getStaticProps() {
 //   // `getStaticProps` is executed on the server side.
@@ -18,34 +20,60 @@ import useSwr from "swr";
 
 // const fetcher = (url) => fetch(url).then((res) => res.json());
 
-const MovieCardList = ({ movieList }) => {
+const MovieCardList = ({
+  movieList,
+  itemsPerPage,
+  maxItems,
+  currentPage,
+  handlePageChange,
+}) => {
   return (
-    <div className="grid lg:grid-cols-2 gap-4 px-6">
-      {movieList.map((el, index) => (
-        <div
-          key={index}
-          className="grid gap-y-4 bg-gray-300 rounded-lg font-body p-4"
-        >
-          <h1 className="text-center uppercase">{el.Title}</h1>
-          <div className="grid px-4 gap-4 grid-cols-2">
-            <div className="relative h-64  rounded-2xl overflow-hidden ">
-              <Image
-                src={el.Poster}
-                alt={el.Title}
-                layout="fill"
-                objectFit="contain"
-                quality="100"
-              />
-            </div>
+    <div className="px-6">
+      <div className="grid lg:grid-cols-2 gap-4">
+        {movieList.map((el, index) => (
+          <div
+            key={index}
+            className="grid gap-y-4 bg-gray-300 rounded-lg font-body p-4"
+          >
+            <h1 className="text-center uppercase">{el.Title}</h1>
+            <div className="grid px-4 gap-4 grid-cols-2">
+              <div className="relative h-64  rounded-2xl overflow-hidden ">
+                {el.Poster && (
+                  <Image
+                    src={el.Poster}
+                    alt={el.Title}
+                    layout="fill"
+                    objectFit="contain"
+                    quality="100"
+                  />
+                )}
+              </div>
 
-            <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content">
-              <h2 className="text-left">Information</h2>
-              <span>{el.Type}</span>
-              <span>{el.Year}</span>
+              <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content">
+                <h2 className="text-left">Information</h2>
+                <span>{el.Type}</span>
+                <span>{el.Year}</span>
+              </div>
             </div>
+            <Link
+              className="bg-gray-700 font-body font-bold text-white text-lg"
+              href={`/movies/${el.imdbID}`}
+            >
+              Check movie
+            </Link>
           </div>
+        ))}
+      </div>
+      {movieList.length > 0 && (
+        <div className="grid">
+          <Pagination
+            currentPage={currentPage}
+            itemsPerPage={itemsPerPage}
+            maxItems={maxItems}
+            handlePageChange={handlePageChange}
+          />
         </div>
-      ))}
+      )}
     </div>
   );
 };
