@@ -1,22 +1,10 @@
+import SearchInput from "../components/SearchInput";
 import Head from "next/head";
 import Image from "next/image";
-import useSWR, { SWRConfig } from "swr";
 
-export async function getStaticProps() {
-  // `getStaticProps` is executed on the server side.
-
-  return {
-    props: {
-      fallback: {
-        "/api/hello": { name: "potomadre" },
-      },
-    },
-  };
-}
+import MovieCardList from "../components/MovieCardList";
 
 const HomeContainer = () => {
-  const { data } = useSWR("/api/hello");
-
   return (
     <div className="container mx-auto">
       <Head>
@@ -26,7 +14,8 @@ const HomeContainer = () => {
       </Head>
 
       <main className="">
-        <h1>{data.name}</h1>
+        <SearchInput />
+        {/* <MovieCardList inputData={value} /> */}
       </main>
 
       <footer className="">
@@ -46,16 +35,5 @@ const HomeContainer = () => {
 };
 
 export default function Home({ fallback }) {
-  return (
-    <SWRConfig
-      value={{
-        fallback,
-        refreshInterval: 3000,
-        fetcher: (resource, init) =>
-          fetch(resource, init).then((res) => res.json()),
-      }}
-    >
-      <HomeContainer />
-    </SWRConfig>
-  );
+  return <HomeContainer />;
 }
