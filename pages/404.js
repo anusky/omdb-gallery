@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import Layout from "../components/Layout";
-
+import Image from "next/image";
 const Page404 = () => {
   return (
     <Layout>
@@ -13,13 +13,15 @@ const Page404 = () => {
           It is a shame we could not find the page you were looking for
         </h3>
 
-        {/* <div className="w-60 h-60 relative m-auto rounded-full overflow-hidden">
-          <img
-            src="/assets/navbar/keycap_yoshi.png"
+        <div className="w-60 h-60 relative m-auto rounded-full overflow-hidden">
+          <Image
+            src="/assets/keycap_yoshi.png"
             alt="render Keycap Dinosaurio"
-            className="object-cover h-full"
+            layout="fill"
+            objectFit="cover"
+            quality="100"
           />
-        </div> */}
+        </div>
         <span className="text-2xl break-words select-none font-normal">
           Seems you got lost, but no worries, you will find way back home if you
           click next button

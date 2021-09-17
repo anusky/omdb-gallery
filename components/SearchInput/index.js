@@ -25,13 +25,11 @@ const SearchInput = () => {
 
   const checkListShouldBeVisible = (data) => {
     if (data?.Search?.length > 0) {
-      console.log("resu;ts ", data);
       setResults([data.Search.length, Number(data.totalResults), currentPage]);
     }
   };
 
   const handlePageChange = (selectedPage) => {
-    console.log("current page ", selectedPage);
     setResults([currentResults, totalResults, selectedPage]);
   };
 
@@ -49,7 +47,7 @@ const SearchInput = () => {
           onChange={handleChangeInput}
           onClick={() => setListVisible(true)}
           value={value}
-          placeholder="Buscar..."
+          placeholder="Search...Johnny Stecchino"
         />
 
         {listVisible && (
