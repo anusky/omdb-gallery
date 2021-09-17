@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import Pagination from "./Pagination";
 import PosterImage from "../PosterImage";
+import { PAGE_URL_LIST } from "utils/constants";
+import { Movie } from "../Icons";
 
 const MovieCardList = ({
   error,
@@ -29,35 +31,23 @@ const MovieCardList = ({
                 Poster={el.Poster}
                 Title={el.Title}
               />
-              {/* <div className="relative h-64  rounded-2xl overflow-hidden "> */}
-              {/* {el.Poster && (
-                  <Image
-                    src={el.Poster}
-                    alt={el.Title}
-                    layout="fill"
-                    objectFit="contain"
-                    quality="100"
-                  />
-                )} */}
-              {/* </div> */}
 
-              <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content">
+              <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content gap-y-4">
                 <h2 className="text-left">Information</h2>
-                <span>{el.Type}</span>
-                <span>{el.Year}</span>
+                <span className="inline-flex">
+                  Type: <Movie /> [{el.Year}]
+                </span>
+                <Link passHref href={PAGE_URL_LIST.getMovieUrlById(el.imdbID)}>
+                  <a className="rounded-xl text-center h-fit-content w-fit-content px-4 bg-gray-600 font-body font-bold text-gray-50 text-lg">
+                    Check movie
+                  </a>
+                </Link>
               </div>
             </div>
-            <Link
-              passHref
-              className="bg-gray-700 font-body font-bold text-white text-lg"
-              href={`/movies/${el.imdbID}`}
-            >
-              Check movie
-            </Link>
           </div>
         ))}
       </div>
-      {/* {movieList.length > 0 && (
+      {movieList.length > 0 && (
         <div className="grid">
           <Pagination
             currentPage={currentPage}
@@ -66,7 +56,7 @@ const MovieCardList = ({
             handlePageChange={handlePageChange}
           />
         </div>
-      )} */}
+      )}
     </div>
   );
 };

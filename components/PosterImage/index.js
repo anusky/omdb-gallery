@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { string } from "prop-types";
-import { isEmpty } from "../../utils/generics";
+import { isCorrectImageSrc } from "../../utils/generics";
 
 const PosterImage = ({ className, Poster, Title }) => {
   return (
@@ -8,11 +8,17 @@ const PosterImage = ({ className, Poster, Title }) => {
       data-testid="poster-image-component"
       className={`relative grid ${className}`}
     >
-      {isEmpty(Poster) && (
-        <span className=" absolute  z-20 text-white">No Poster Available</span>
+      {!isCorrectImageSrc(Poster) && (
+        <span className="grid place-items-center w-full h-full absolute z-20 text-white ">
+          No Poster Available
+        </span>
       )}
       <Image
-        src={isEmpty(Poster) ? "https://picsum.photos/id/237/200/300" : Poster}
+        src={
+          !isCorrectImageSrc(Poster)
+            ? "https://picsum.photos/id/237/200/300"
+            : Poster
+        }
         alt={Title}
         layout="fill"
         objectFit="contain"

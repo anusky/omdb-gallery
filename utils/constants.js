@@ -11,3 +11,10 @@ export const RATING_ICON_KEYS = {
   METACRITIC: "Metacritic",
   IMDB: "Internet Movie Database",
 };
+
+export const PAGE_URL_LIST = {
+  MOVIES: "/movies/:id:",
+  getMovieUrlById(movieId) {
+    return this.MOVIES.replace(":id:", movieId);
+  },
+};

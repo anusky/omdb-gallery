@@ -13,3 +13,14 @@ export const isEmpty = (data) => {
       return data === undefined || data === null;
   }
 };
+
+/**
+ * @function isCorrectImageSrc tells if image source provided corresponds to an image
+ * @param {string} imageSrc image source
+ * @returns boolean telling if image source is correct or not
+ */
+export const isCorrectImageSrc = (imageSrc) => {
+  return (
+    typeof imageSrc === "string" && imageSrc !== "N/A" && !isEmpty(imageSrc)
+  );
+};

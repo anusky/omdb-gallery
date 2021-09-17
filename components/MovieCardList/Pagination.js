@@ -1,5 +1,6 @@
 import { number } from "prop-types";
 import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "../Icons";
 
 const Pagination = ({
   itemsPerPage,
@@ -31,9 +32,10 @@ const Pagination = ({
   return (
     <div className="bg-white  px-4 sm:px-6 md:px-16 py-3 flex items-center justify-between border-t border-gray-200  text-g4m-gray-dark-2">
       <nav
-        className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+        className="relative z-0 inline-flex rounded-md shadow-sm -space-x-px place-items-center"
         aria-label="Pagination"
       >
+        <span className="mr-4">Current Page: {currentPage}</span>
         <button
           onClick={handlePrevious}
           className="relative inline-flex disabled:bg-g4m-gray-dark-3  disabled:text-white items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-g4m-gray-dark-2 hover:bg-gray-50 select-none"
@@ -41,9 +43,9 @@ const Pagination = ({
         >
           <span className="sr-only">{"previous"}</span>
 
-          {/* <ChevronLeft /> */}
+          <ChevronLeft />
         </button>
-        {pagesArray.map((el, index) => {
+        {/* {pagesArray.map((el, index) => {
           const className = `relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium text-g4m-gray-dark-2 select-none ${
             index + 1 === currentPage
               ? "bg-g4m-gray-default"
@@ -58,7 +60,7 @@ const Pagination = ({
               {index + 1}
             </button>
           );
-        })}
+        })} */}
 
         <button
           onClick={handleNext}
@@ -66,7 +68,7 @@ const Pagination = ({
           disabled={currentPage >= maxPages}
         >
           <span className="sr-only">{"next"}</span>
-          {/* <ChevronRight /> */}
+          <ChevronRight />
         </button>
       </nav>
     </div>

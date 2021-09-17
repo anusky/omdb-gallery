@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const response = await fetch(URL).then((res) => res.json());
 
     if (response.Error) {
-      console.log("IMb ID ", req.query.id, " ", response);
+      console.log("Error: ", req.query.id, " ", response);
     }
     res.status(200).json({ ...response });
   } catch (e) {
