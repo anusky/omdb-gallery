@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const response = await fetch(URL).then((res) => res.json());
     // console.log("response ", response);
     if (response.Error) {
-      console.log("IMb ID ", process.env.NEXT_PUBLIC_OMDB_API_KEY);
+      console.log("IMb ID ", req.query.id, " ", response);
     }
     res.status(200).json({ ...response });
   } catch (e) {

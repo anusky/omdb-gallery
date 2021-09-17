@@ -2,8 +2,10 @@ import { string } from "prop-types";
 
 const SingleGenre = ({ genre, isLast }) => (
   <>
-    <span className="movie-info">{genre}</span>
-    {!isLast && <span className="movie-info">|</span>}
+    <span className="text-omdb-gray-medium font-medium border-2 border-omdb-gray-medium rounded-full px-2">
+      {genre}
+    </span>
+    {/* {!isLast && <span className="movie-info">|</span>} */}
   </>
 );
 

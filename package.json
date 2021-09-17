@@ -8,9 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
+    "jest:clear": "jest --clearCache",
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "mongoose": "^6.0.6",
     "next": "11.1.2",
     "prop-types": "^15.7.2",
     "react": "17.0.2",

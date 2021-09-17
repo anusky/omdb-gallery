@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 const HomeContainer = () => {
   return (
     <Layout>
-      <section className="container mx-auto">
+      <section data-testid="home-page-container" className="container mx-auto">
         <SearchInput />
       </section>
     </Layout>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Pagination from "./Pagination";
 
 const MovieCardList = ({
+  error,
   movieList,
   itemsPerPage,
   maxItems,
@@ -12,7 +13,8 @@ const MovieCardList = ({
   handlePageChange,
 }) => {
   return (
-    <div className="px-6">
+    <div data-testid="movie-card-list-container" className="px-6">
+      {error && <div className="">{error}</div>}
       <div className="grid lg:grid-cols-2 gap-4">
         {movieList.map((el, index) => (
           <div
@@ -22,7 +24,7 @@ const MovieCardList = ({
             <h1 className="text-center uppercase">{el.Title}</h1>
             <div className="grid px-4 gap-4 grid-cols-2">
               <div className="relative h-64  rounded-2xl overflow-hidden ">
-                {el.Poster && (
+                {/* {el.Poster && (
                   <Image
                     src={el.Poster}
                     alt={el.Title}
@@ -30,7 +32,7 @@ const MovieCardList = ({
                     objectFit="contain"
                     quality="100"
                   />
-                )}
+                )} */}
               </div>
 
               <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content">

@@ -1,4 +1,4 @@
-import { fromCommasToArray } from "../strings";
+import { fromCommasToArray, fromSpacesToPlus } from "../strings";
 
 describe("Strings utils functionality", () => {
   it("fromCommasToArray should return an array when no input is sent", () => {
@@ -21,5 +21,9 @@ describe("Strings utils functionality", () => {
       "Nombre 1",
       "Nombre 2",
     ]);
+  });
+
+  it("fromSpacesToPlus should return an string with spaces replaced by '+' symbol", () => {
+    expect(fromSpacesToPlus("Name LastName")).toEqual("Name+LastName");
   });
 });

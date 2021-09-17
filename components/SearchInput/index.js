@@ -60,6 +60,7 @@ const SearchInput = () => {
         )}
       </div>
       <MovieCardList
+        error={data?.Error}
         movieList={data?.Search}
         itemsPerPage={currentResults}
         maxItems={totalResults}

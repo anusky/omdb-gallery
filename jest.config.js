@@ -21,8 +21,14 @@ module.exports = {
     "^@/utils/(.*)$": "<rootDir>/utils$1",
     // '^@pages(.*)$': '<rootDir>/pages$1',
   },
+  setupFiles: ["<rootDir>/__mocks__/browser.mock.js"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/node_modules/",
+    "<rootDir>/.next/",
+    "__mocks__",
+    "__fixtures__",
+  ],
   transform: {
     // Use babel-jest to transpile tests with the next/babel preset
     // https://jestjs.io/docs/configuration#transform-objectstring-pathtotransformer--pathtotransformer-object
@@ -32,4 +38,8 @@ module.exports = {
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
+
+  globals: {
+    window: {},
+  },
 };

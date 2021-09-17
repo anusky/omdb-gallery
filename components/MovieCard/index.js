@@ -6,6 +6,7 @@ import { RatedTag } from "../RatedTag";
 import { TitleDescriptionPair } from "./TitleDescriptionPair";
 import { Genres } from "./Genres";
 import { RatingTags } from "./RatingTags";
+import AddToFavourites from "../AddToFavourites";
 
 const MovieCard = (props) => {
   const {
@@ -24,6 +25,7 @@ const MovieCard = (props) => {
     Ratings,
     Actors,
     Production,
+    imdbID,
   } = props;
   const titleAndYear = `${Title} (${Year}) `;
   return (
@@ -63,9 +65,16 @@ const MovieCard = (props) => {
             quality="100"
           />
         </div>
+        <AddToFavourites
+          className="lg:order-3 lg:col-start-3 "
+          title={Title}
+          poster={Poster}
+          plot={Plot}
+          imdbID={imdbID}
+        />
       </div>
       <div className="bg-gray-50 lg:bg-gray-100 p-4">
-        <h1 className="text-center">Plot</h1>
+        <h1 className="text-left">Plot</h1>
         <TitleDescriptionPair description={Plot} />
       </div>
     </div>
