@@ -20,7 +20,7 @@ const MovieCardList = ({
         {movieList.map((el, index) => (
           <div
             key={index}
-            className="grid gap-y-4 bg-gray-300 rounded-lg font-body p-4"
+            className="grid gap-y-4 bg-gray-50 rounded-lg font-body p-4"
           >
             <h1 className="text-center uppercase">{el.Title}</h1>
             <div className="grid px-4 gap-4 grid-cols-2">
@@ -57,7 +57,7 @@ const MovieCardList = ({
           </div>
         ))}
       </div>
-      {movieList.length > 0 && (
+      {/* {movieList.length > 0 && (
         <div className="grid">
           <Pagination
             currentPage={currentPage}
@@ -66,7 +66,7 @@ const MovieCardList = ({
             handlePageChange={handlePageChange}
           />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

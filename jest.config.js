@@ -21,7 +21,10 @@ module.exports = {
     "^@/utils/(.*)$": "<rootDir>/utils$1",
     // '^@pages(.*)$': '<rootDir>/pages$1',
   },
-  setupFiles: ["<rootDir>/__mocks__/browser.mock.js"],
+  setupFiles: [
+    "<rootDir>/__mocks__/browser.mock.js",
+    "<rootDir>/.jest/setEnvVars.js",
+  ],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   testPathIgnorePatterns: [
     "<rootDir>/node_modules/",

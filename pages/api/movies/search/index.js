@@ -1,4 +1,5 @@
-import { fromSpacesToPlus } from "@utils/strings";
+import { getSearchUrl } from "../../../../utils/apiRoutes";
+import { fromSpacesToPlus } from "../../../../utils/strings";
 
 export default async function handler(req, res) {
   if (req.query.id.length <= 2) {
@@ -6,7 +7,7 @@ export default async function handler(req, res) {
   } else {
     try {
       const { id, page = 1, parsedId = fromSpacesToPlus(id) } = req.query;
-      const URL = `https://omdbapi.com/?s=${parsedId}&page=${page}&apikey=${process.env.NEXT_PUBLIC_OMDB_API_KEY}`;
+      const URL = getSearchUrl(parsedId, page);
       const response = await fetch(URL).then((res) => res.json());
 
       if (response.Error) {
