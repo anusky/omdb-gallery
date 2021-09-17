@@ -3,8 +3,7 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@utils/*": ["utils/*"]
+      "@pages/*": ["pages/*"]
     }
   },
   "exclude": ["node_modules", ".cache", "dist", "out", ".next", "deprecated"]

@@ -1,7 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["m.media-amazon.com"],
+    domains: ["m.media-amazon.com", "picsum.photos"],
   },
   async redirects() {
     return [

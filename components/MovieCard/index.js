@@ -5,8 +5,11 @@ import { IMBDTag } from "../IMBDTag";
 import { RatedTag } from "../RatedTag";
 import { TitleDescriptionPair } from "./TitleDescriptionPair";
 import { Genres } from "./Genres";
-import { RatingTags } from "./RatingTags";
+
 import AddToFavourites from "../AddToFavourites";
+import { isEmpty } from "../../utils/generics";
+import { RatingTags } from "./RatingTags";
+import PosterImage from "../PosterImage";
 
 const MovieCard = (props) => {
   const {
@@ -29,7 +32,10 @@ const MovieCard = (props) => {
   } = props;
   const titleAndYear = `${Title} (${Year}) `;
   return (
-    <div className="grid rounded-lg overflow-hidden bg-gray-50 gap-y-7">
+    <div
+      data-testid="moviecard-component"
+      className="grid rounded-lg overflow-hidden bg-gray-50 gap-y-7"
+    >
       <div className="lg:p-4 grid gap-y-8 lg:gap-y-0 lg:grid-cols-3">
         <div className="bg-gray-100 lg:bg-transparent p-4 lg:p-0 grid order-2 lg:order-1 lg:col-span-2 lg:col-start-1 gap-y-3">
           <div className="inline-flex place-items-center gap-x-2">
@@ -56,15 +62,7 @@ const MovieCard = (props) => {
           <TitleDescriptionPair title="Awards:" description={Awards} />
           <TitleDescriptionPair title="Production:" description={Production} />
         </div>
-        <div className="relative h-96 w-full lg:h-auto lg:w-auto order-1 lg:order-2 lg:row-start-auto lg:col-span-1">
-          <Image
-            src={Poster}
-            alt={Title}
-            layout="fill"
-            objectFit="contain"
-            quality="100"
-          />
-        </div>
+        <PosterImage className="h-96 w-full lg:h-auto lg:w-auto order-1 lg:order-2 lg:row-start-auto lg:col-span-1" />
         <AddToFavourites
           className="lg:order-3 lg:col-start-3 "
           title={Title}
@@ -73,10 +71,15 @@ const MovieCard = (props) => {
           imdbID={imdbID}
         />
       </div>
-      <div className="bg-gray-50 lg:bg-gray-100 p-4">
-        <h1 className="text-left">Plot</h1>
-        <TitleDescriptionPair description={Plot} />
-      </div>
+      {!isEmpty(Plot) && (
+        <div
+          data-testid="moviecard-plot"
+          className="bg-gray-50 lg:bg-gray-100 p-4"
+        >
+          <h1 className="text-left">Plot</h1>
+          <TitleDescriptionPair description={Plot} />
+        </div>
+      )}
     </div>
   );
 };

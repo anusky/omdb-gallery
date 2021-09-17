@@ -30,6 +30,7 @@ export const ChevronRight = ({ className = "" }) => (
 
 export const RottenTomatoes = ({ className }) => (
   <svg
+    data-testid="icon-rotten-tomatoes"
     className="h-6 w-6"
     viewBox="0 0 80 80"
     version="1.1"
@@ -88,6 +89,7 @@ export const RottenTomatoes = ({ className }) => (
 
 export const Metacritic = () => (
   <svg
+    data-testid="icon-metacritic"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -188,7 +190,7 @@ export const Metacritic = () => (
 
 export const Imdb = () => (
   <svg
-    id="home_img"
+    data-testid="icon-imbd"
     xmlns="http://www.w3.org/2000/svg"
     className="h-6 w-12"
     viewBox="0 0 64 32"
