@@ -3,6 +3,11 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        "omdb-gray-dark": "#333333",
+        "omdb-gray-medium": "#828282",
+        "omdb-gray-light": "silver",
+      },
       gridTemplateColumns: {
         "moviecard-container": "3fr 1fr",
       },
@@ -14,8 +19,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      body: ["Roboto Condensed", "sans-serif"],
-      title: ["Teko", "sans-serif"],
+      body: ["Roboto", "sans-serif"],
     },
   },
   variants: {
