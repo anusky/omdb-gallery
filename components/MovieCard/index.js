@@ -1,7 +1,6 @@
 import { string } from "prop-types";
 import Image from "next/image";
 
-import { IMBDTag } from "../IMBDTag";
 import { RatedTag } from "../RatedTag";
 import { TitleDescriptionPair } from "./TitleDescriptionPair";
 import { Genres } from "./Genres";
@@ -10,6 +9,7 @@ import AddToFavourites from "../AddToFavourites";
 import { isEmpty } from "../../utils/generics";
 import { RatingTags } from "./RatingTags";
 import PosterImage from "../PosterImage";
+import { IMDBTag } from "../IMBDTag";
 
 const MovieCard = (props) => {
   const {
@@ -43,7 +43,7 @@ const MovieCard = (props) => {
               {titleAndYear}
               <span className="text-omdb-gray-light">[{Runtime}]</span>
             </h1>
-            <IMBDTag />
+            <IMDBTag />
             <RatedTag rated={Rated} />
           </div>
 
@@ -62,7 +62,11 @@ const MovieCard = (props) => {
           <TitleDescriptionPair title="Awards:" description={Awards} />
           <TitleDescriptionPair title="Production:" description={Production} />
         </div>
-        <PosterImage className="h-96 w-full lg:h-auto lg:w-auto order-1 lg:order-2 lg:row-start-auto lg:col-span-1" />
+        <PosterImage
+          className="h-96 w-full lg:h-auto lg:w-auto order-1 lg:order-2 lg:row-start-auto lg:col-span-1"
+          Poster={Poster}
+          Title={Title}
+        />
         <AddToFavourites
           className="lg:order-3 lg:col-start-3 "
           title={Title}

@@ -6,10 +6,10 @@ const PosterImage = ({ className, Poster, Title }) => {
   return (
     <div
       data-testid="poster-image-component"
-      className={`relative ${className}`}
+      className={`relative grid ${className}`}
     >
       {isEmpty(Poster) && (
-        <span className="absolute text-white">No Poster Available</span>
+        <span className=" absolute  z-20 text-white">No Poster Available</span>
       )}
       <Image
         src={isEmpty(Poster) ? "https://picsum.photos/id/237/200/300" : Poster}

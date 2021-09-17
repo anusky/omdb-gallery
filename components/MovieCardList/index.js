@@ -3,6 +3,7 @@ import { array } from "prop-types";
 import Link from "next/link";
 
 import Pagination from "./Pagination";
+import PosterImage from "../PosterImage";
 
 const MovieCardList = ({
   error,
@@ -23,8 +24,13 @@ const MovieCardList = ({
           >
             <h1 className="text-center uppercase">{el.Title}</h1>
             <div className="grid px-4 gap-4 grid-cols-2">
-              <div className="relative h-64  rounded-2xl overflow-hidden ">
-                {/* {el.Poster && (
+              <PosterImage
+                className="h-64  rounded-2xl overflow-hidden"
+                Poster={el.Poster}
+                Title={el.Title}
+              />
+              {/* <div className="relative h-64  rounded-2xl overflow-hidden "> */}
+              {/* {el.Poster && (
                   <Image
                     src={el.Poster}
                     alt={el.Title}
@@ -33,7 +39,7 @@ const MovieCardList = ({
                     quality="100"
                   />
                 )} */}
-              </div>
+              {/* </div> */}
 
               <div className="grid justify-center my-auto lg:my-0 lg:justify-start h-fit-content">
                 <h2 className="text-left">Information</h2>

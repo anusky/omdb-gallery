@@ -1,3 +1,15 @@
+import { string } from "prop-types";
+
 export const RatedTag = ({ rated }) => {
-  return <div className="bg-blue-600 text-white pill">{rated}</div>;
+  return (
+    rated && (
+      <div data-testid="rated-tag" className="bg-blue-600 text-white pill">
+        {rated}
+      </div>
+    )
+  );
+};
+
+RatedTag.propTypes = {
+  rated: string,
 };
