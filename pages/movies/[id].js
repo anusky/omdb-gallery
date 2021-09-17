@@ -22,7 +22,7 @@ export default function MoviesPage({}) {
 
       <main className="p-6">
         {data && <MovieCard {...data} />}
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       </main>
 
       <footer className="">
