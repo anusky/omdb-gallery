@@ -1,15 +1,14 @@
 import { string } from "prop-types";
-import Image from "next/image";
 
 import { RatedTag } from "../RatedTag";
 import { TitleDescriptionPair } from "./TitleDescriptionPair";
-import { Genres } from "./Genres";
 
 import AddToFavourites from "../AddToFavourites";
 import { isEmpty } from "../../utils/generics";
 import { RatingTags } from "./RatingTags";
 import PosterImage from "../PosterImage";
 import { IMDBTag } from "../IMBDTag";
+import Genres from "./Genres";
 
 const MovieCard = (props) => {
   const {
