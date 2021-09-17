@@ -15,7 +15,6 @@ const MovieCard = (props) => {
     Released,
     Runtime,
     Poster,
-    imdbRating,
     Rated,
     Director,
     Writer,
@@ -69,6 +68,7 @@ const MovieCard = (props) => {
         <h1 className="text-center">Plot</h1>
         <TitleDescriptionPair description={Plot} />
       </div>
+      <pre>{JSON.stringify(props, null, 2)}</pre>
     </div>
   );
 };

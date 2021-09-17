@@ -18,7 +18,7 @@ const SearchInput = () => {
   };
 
   const { data } = useSwr(
-    value.length ? `/api/movies/${value}?page=${currentPage}` : null,
+    value.length ? `/api/movies/search/?id=${value}&page=${currentPage}` : null,
     fetcher
   );
 

@@ -4,7 +4,7 @@
 
 @layer components {
   body {
-    @apply text-omdb-gray-dark font-body;
+    @apply text-omdb-gray-dark font-body relative min-h-full;
   }
   h1 {
     @apply font-body font-bold text-2xl;
@@ -17,5 +17,11 @@
   }
   span.movie-info {
     @apply text-omdb-gray-medium font-medium;
+  }
+  main {
+    @apply mb-64;
+  }
+  footer {
+    @apply w-full absolute bottom-0 bg-omdb-gray-dark h-32;
   }
 }
