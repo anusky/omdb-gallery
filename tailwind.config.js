@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         "omdb-gray-dark": "#333333",
+        "omdb-gray-dark-2": "#4F4F4F",
         "omdb-gray-medium": "#828282",
         "omdb-gray-light": "silver",
       },

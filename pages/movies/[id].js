@@ -1,3 +1,4 @@
+import Breadcrumb from "@/components/Breadcrumb";
 import MovieCard from "@/components/MovieCard";
 import { useRouter } from "next/dist/client/router";
 import Head from "next/head";
@@ -21,8 +22,18 @@ export default function MoviesPage({}) {
       </Head>
 
       <main className="p-6">
-        {data && <MovieCard {...data} />}
-        {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
+        {data && (
+          <>
+            <Breadcrumb
+              slugStructure={{
+                text: `${data.Type} - ${data.Title}`,
+                slug: `/movies/${data.imdbID}`,
+                disabled: true,
+              }}
+            />
+            <MovieCard {...data} />
+          </>
+        )}
       </main>
 
       <footer className="">
