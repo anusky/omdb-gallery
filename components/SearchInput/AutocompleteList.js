@@ -1,4 +1,5 @@
 import { array } from "prop-types";
+import Link from "next/link";
 
 const AutocompleteList = ({ list, hidAutocompleteList }) => {
   return (
@@ -8,11 +9,16 @@ const AutocompleteList = ({ list, hidAutocompleteList }) => {
     >
       <ul className="grid gap-y-2">
         {list.map((el, index) => {
-          const { Title } = el;
+          const { Title, imdbID } = el;
           return (
-            <li className="p-2 hover:bg-gray-50 cursor-pointer" key={index}>
-              {Title}
-            </li>
+            <Link
+              key={index}
+              passHref
+              className="bg-gray-700 font-body font-bold text-white text-lg"
+              href={`/movies/${imdbID}`}
+            >
+              <li className="p-2 hover:bg-gray-50 cursor-pointer">{Title}</li>
+            </Link>
           );
         })}
       </ul>

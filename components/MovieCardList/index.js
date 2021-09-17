@@ -2,23 +2,7 @@ import Image from "next/image";
 import { array } from "prop-types";
 import Link from "next/link";
 
-import { string } from "prop-types";
-import useSwr from "swr";
 import Pagination from "./Pagination";
-
-// export async function getStaticProps() {
-//   // `getStaticProps` is executed on the server side.
-
-//   return {
-//     props: {
-//       fallback: {
-//         "/api/movies/[id]": { loading: true },
-//       },
-//     },
-//   };
-// }
-
-// const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const MovieCardList = ({
   movieList,
@@ -56,6 +40,7 @@ const MovieCardList = ({
               </div>
             </div>
             <Link
+              passHref
               className="bg-gray-700 font-body font-bold text-white text-lg"
               href={`/movies/${el.imdbID}`}
             >

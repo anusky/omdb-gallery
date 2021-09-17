@@ -14,6 +14,7 @@ const SearchInput = () => {
 
   const handleChangeInput = (event) => {
     setValue(event.target.value);
+    setListVisible(true);
     setResults([currentResults, totalResults, 1]);
   };
 
@@ -46,7 +47,7 @@ const SearchInput = () => {
           type="text"
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           onChange={handleChangeInput}
-          onClick={() => checkListShouldBeVisible(data)}
+          onClick={() => setListVisible(true)}
           value={value}
           placeholder="Buscar..."
         />

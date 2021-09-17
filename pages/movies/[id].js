@@ -17,7 +17,7 @@ export default function MoviesPage({}) {
   return (
     <Layout>
       {data && (
-        <section className="container mx-auto p-6">
+        <section className="container mx-auto p-6 grid gap-y-4">
           <MetaTags
             customMetaTags={{
               ogTitle: data.Title,

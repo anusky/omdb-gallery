@@ -5,8 +5,10 @@ import Layout from "@/components/Layout";
 
 const HomeContainer = () => {
   return (
-    <Layout className="container mx-auto">
-      <SearchInput />
+    <Layout>
+      <section className="container mx-auto">
+        <SearchInput />
+      </section>
     </Layout>
   );
 };
