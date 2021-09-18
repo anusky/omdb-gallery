@@ -17,7 +17,6 @@ const AddToFavourites = ({ className, title, plot, poster, imdbID }) => {
   }, [imdbID]);
 
   const handleFavouriteMovie = (event) => {
-    event.preventDefault();
     if (!movieIsAdded) {
       addFavouriteMovie({ title, plot, poster, imdbID });
       setMovieAdded(true);

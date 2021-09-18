@@ -36,6 +36,13 @@ const minimumRequirementsDevices = () => {
     );
   });
 
+  it("Typing 3 characters should make appear MovieCardList component", () => {
+    cy.get("@focusInput").clear().type(`bat`);
+    cy.findByTestId("movie-card-list-container", { timeout: 5000 }).should(
+      "exist"
+    );
+  });
+
   it("When pressing `enter` with input focused, autocomplete should hide", () => {
     cy.get("@focusInput").clear().type(`bat{enter}`);
 

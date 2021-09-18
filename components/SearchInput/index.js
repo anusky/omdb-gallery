@@ -15,7 +15,6 @@ const SearchInput = () => {
   const handleChangeInput = (event) => {
     setValue(event.target.value);
     if (event.target.value.length > 2) {
-      // setListVisible(true);
       setResults([currentResults, totalResults, 1]);
     }
   };

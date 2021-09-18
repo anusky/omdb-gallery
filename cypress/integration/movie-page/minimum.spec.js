@@ -2,7 +2,10 @@
 
 const minimumRequirementsDevices = () => {
   before(() => {
-    cy.visit("/");
+    /**
+     * Let's play with Johnny Stecchino
+     */
+    cy.visit("/movies/tt0102164");
   });
 
   it("cy.document() - get the document object", () => {
@@ -12,21 +15,16 @@ const minimumRequirementsDevices = () => {
 
   it("cy.title() - get the title", () => {
     // https://on.cypress.io/title
-    cy.title().should("include", "OMBD Searcher App");
+    cy.title().should("include", "Johnny Stecchino");
   });
 
-  it("Home should contain a search input", () => {
-    cy.findByTestId("search-input-component").should("exist");
-  });
-
-  it("When users go to /home should be redirected to / ", () => {
-    cy.visit("/home");
-    cy.url().should("include", "/");
+  it("Movie page should contain a breadcrumb", () => {
+    cy.findByTestId("breadcrumb-component").should("exist");
   });
 };
 
 context(
-  "Desktop - Minimum requirements in home page",
+  "Desktop - Minimum requirements in movie page",
   {
     viewportWidth: 1536,
     viewportHeight: 960,

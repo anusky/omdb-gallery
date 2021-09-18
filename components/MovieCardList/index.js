@@ -21,6 +21,7 @@ const MovieCardList = ({
       <div className="grid lg:grid-cols-2 gap-4">
         {movieList.map((el, index) => (
           <div
+            data-testid="movie-card-list-item"
             key={index}
             className="grid gap-y-4 bg-gray-50 rounded-lg font-body p-4"
           >
