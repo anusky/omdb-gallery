@@ -1,11 +1,11 @@
 import { array } from "prop-types";
-import Link from "next/link";
 
 import Pagination from "./Pagination";
 import PosterImage from "../PosterImage";
 
 import { Movie } from "../Icons";
-import { PAGE_URL_LIST } from "@/utils/constants";
+
+import MovieLink from "../MovieLink";
 
 const MovieCardList = ({
   error,
@@ -37,11 +37,7 @@ const MovieCardList = ({
                 <span className="inline-flex">
                   Type: <Movie /> [{el.Year}]
                 </span>
-                <Link passHref href={PAGE_URL_LIST.getMovieUrlById(el.imdbID)}>
-                  <a className="rounded-xl text-center h-fit-content w-fit-content px-4 bg-gray-600 font-body font-bold text-gray-50 text-lg">
-                    Check movie
-                  </a>
-                </Link>
+                <MovieLink imdbID={el.imdbID} text="Check movie" />
               </div>
             </div>
           </div>

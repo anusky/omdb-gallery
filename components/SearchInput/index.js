@@ -14,8 +14,14 @@ const SearchInput = () => {
 
   const handleChangeInput = (event) => {
     setValue(event.target.value);
-    setListVisible(true);
-    setResults([currentResults, totalResults, 1]);
+    if (event.target.value.length > 2) {
+      // setListVisible(true);
+      setResults([currentResults, totalResults, 1]);
+    }
+  };
+  const handleOnEnterInput = (event) => {
+    event.preventDefault();
+    setListVisible(false);
   };
 
   const { data } = useSwr(
@@ -24,8 +30,12 @@ const SearchInput = () => {
   );
 
   const checkListShouldBeVisible = (data) => {
+    console.log("que  pasa ", data);
     if (data?.Search?.length > 0) {
+      setListVisible(true);
       setResults([data.Search.length, Number(data.totalResults), currentPage]);
+    } else {
+      setListVisible(false);
     }
   };
 
@@ -40,15 +50,26 @@ const SearchInput = () => {
   return (
     <div data-testid="search-input-component" className="w-full grid gap-y-6">
       <div className="px-6">
-        <label className="text-gray-700 text-sm font-bold mb-2">Movie</label>
-        <input
-          type="text"
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          onChange={handleChangeInput}
-          onClick={() => setListVisible(true)}
-          value={value}
-          placeholder="Search...Johnny Stecchino"
-        />
+        <form onSubmit={handleOnEnterInput}>
+          <label
+            htmlFor="movie"
+            className="text-gray-700 text-sm font-bold mb-2"
+          >
+            Movie
+          </label>
+
+          <input
+            type="text"
+            id="movie"
+            required
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            onChange={handleChangeInput}
+            onClick={() => checkListShouldBeVisible(data)}
+            value={value}
+            placeholder="Search...Johnny Stecchino"
+          />
+          <button type="submit"></button>
+        </form>
 
         {listVisible && (
           <AutocompleteList
