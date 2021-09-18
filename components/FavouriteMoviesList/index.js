@@ -18,8 +18,8 @@ const FavouriteMoviesList = ({ favList }) => {
         </>
       ) : (
         <div data-testid="fav-list-empty" className="grid gap-y-4">
-          <span>Ooops seems you still have no added favouties movies.</span>
-          <span>Maybe can go back home and find some to add.</span>
+          <h1>Ooops seems you still have no added favouties movies.</h1>
+          <h2>Maybe can go back home and find some to add.</h2>
           <Link passHref href={PAGE_URL_LIST.HOME}>
             <a className="rounded-xl text-center h-fit-content w-fit-content px-4 py-1 bg-gray-100 font-bold text-omdb-gray-dark  text-lg">
               Go Home

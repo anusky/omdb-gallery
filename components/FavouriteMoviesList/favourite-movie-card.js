@@ -6,7 +6,10 @@ import MovieLink from "../MovieLink";
 
 const FavouriteMovieCard = (props) => {
   return (
-    <div className="grid w-fit-content rounded-lg overflow-hidden bg-gray-100 gap-y-8">
+    <div
+      data-testid="favourite-movie-card"
+      className="grid w-fit-content rounded-lg overflow-hidden bg-gray-100 gap-y-8"
+    >
       <div className="grid place-items-center py-4 relative gap-y-4">
         <h1>{props.title}</h1>
         <PosterImage
