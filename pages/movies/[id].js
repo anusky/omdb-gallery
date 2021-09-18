@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Layout from "@/components/Layout";
+import Loader from "@/components/Loader";
 import MetaTags from "@/components/MetaTags";
 import MovieCard from "@/components/MovieCard";
 import { useRouter } from "next/dist/client/router";
@@ -16,7 +17,7 @@ export default function MoviesPage({}) {
   );
   return (
     <Layout>
-      {data && (
+      {data ? (
         <section className="container mx-auto p-6 grid gap-y-4">
           <MetaTags
             customMetaTags={{
@@ -38,6 +39,8 @@ export default function MoviesPage({}) {
           />
           <MovieCard {...data} />
         </section>
+      ) : (
+        <Loader />
       )}
     </Layout>
   );
