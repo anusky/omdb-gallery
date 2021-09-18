@@ -16,6 +16,7 @@ module.exports = {
         "omdb-gray-dark-2": "#4F4F4F",
         "omdb-gray-medium": "#828282",
         "omdb-gray-light": "silver",
+        "omdb-gray-light-2": "#F2F2F2",
       },
       gridTemplateColumns: {
         "2-1fr": "1fr 1fr",

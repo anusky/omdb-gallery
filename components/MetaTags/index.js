@@ -3,7 +3,7 @@ import { shape } from "prop-types";
 import { string } from "prop-types";
 import { getSchemaByType } from "@utils/schemas";
 
-const MetaTags = ({ customMetaTags, pageTitle }) => {
+const MetaTags = ({ customMetaTags, pageTitle, pageDescription }) => {
   const { ogTitle, ogUrl, ogDescription, ogImage, ogType, Type } =
     customMetaTags;
   return (
@@ -76,7 +76,9 @@ MetaTags.propTypes = {
     ogType: string,
   }),
   pageTitle: string,
+  pageDescription: string,
 };
 MetaTags.defaultProps = {
-  pageTitle: "OMBD Searcher",
+  pageTitle: "OMBD Searcher App",
+  pageDescription: "Find any movie you want",
 };
