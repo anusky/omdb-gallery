@@ -38,7 +38,7 @@ const SearchInput = () => {
   }, [data]);
 
   return (
-    <div className="w-full grid gap-y-6">
+    <div data-testid="search-input-component" className="w-full grid gap-y-6">
       <div className="px-6">
         <label className="text-gray-700 text-sm font-bold mb-2">Movie</label>
         <input

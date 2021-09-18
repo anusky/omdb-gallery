@@ -41,7 +41,8 @@ module.exports = {
     "/node_modules/",
     "^.+\\.module\\.(css|sass|scss)$",
   ],
-
+  //   // The glob patterns Jest uses to detect test files
+  testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(test).[tj]s?(x)"],
   globals: {
     window: {},
   },

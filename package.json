@@ -9,7 +9,10 @@
     "lint": "next lint",
     "test": "jest --watch",
     "jest:clear": "jest --clearCache",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:spec": "cypress run --spec \"cypress/integration/$TEST/*.spec.js\""
   },
   "dependencies": {
     "mongoose": "^6.0.6",
@@ -20,11 +23,13 @@
     "swr": "^1.0.1"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^8.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "@testing-library/user-event": "^13.2.1",
     "autoprefixer": "^10.3.4",
     "babel-jest": "^27.2.0",
+    "cypress": "^8.4.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-plugin-testing-library": "^4.12.2",
