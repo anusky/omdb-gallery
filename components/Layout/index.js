@@ -4,7 +4,7 @@ import Header from "../Header";
 
 const Layout = ({ className, children }) => {
   return (
-    <div className={className}>
+    <div data-testid="layout-component" className={className}>
       <section className="flex flex-col min-h-screen">
         <Header />
         <Body>{children}</Body>

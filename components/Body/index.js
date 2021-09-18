@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { string } from "prop-types";
 const Body = ({ children, dataTestid }) => {
   return (
     <main
-      data-tstid={dataTestid}
+      data-testid={dataTestid}
       className="pt-14 md:pt-16 lg:pt-108 pb-32 md:pb-200"
     >
       {children}
@@ -11,7 +12,7 @@ const Body = ({ children, dataTestid }) => {
 };
 export default Body;
 Body.propTypes = {
-  dataTestid: PropTypes.string,
+  dataTestid: string,
 };
 Body.defaultProps = {
   dataTestid: "body-component",
