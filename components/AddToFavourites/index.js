@@ -5,8 +5,7 @@ import {
   checkMovieIsAlreadyFavouriteById,
   removeFavouriteMovieById,
 } from "../../utils/favourites";
-import { Heart } from "../Icons";
-import AddToFavouritesButton from "./AddToFavouritesButton";
+import { Heart, SadFace } from "../Icons";
 
 const AddToFavourites = ({ className, title, plot, poster, imdbID }) => {
   const [movieIsAdded, setMovieAdded] = useState(false);
@@ -29,22 +28,20 @@ const AddToFavourites = ({ className, title, plot, poster, imdbID }) => {
   };
 
   return (
-    <div
+    <button
       data-testid="add-favourites-component"
-      className={`grid place-items-center p-4 gap-x-2 grid-flow-col w-fit-content justify-self-center rounded-b-lg bg-gray-100 ${className}`}
+      onClick={handleFavouriteMovie}
+      className={`add-to-fav-button omdb-button ${className}`}
     >
-      {movieIsAdded ? (
-        <span className="font-medium text-gray-500">
-          Remove From Favourites
-        </span>
-      ) : (
-        <span className="font-medium">Add to Favourites</span>
-      )}
-      <AddToFavouritesButton
-        handleOnClick={handleFavouriteMovie}
-        active={movieIsAdded}
-      />
-    </div>
+      <span>{movieIsAdded ? "Remove" : "Add"}</span>
+      <div
+        className={`add-to-fav-icon grid grid-flow-col place-items-center ${
+          movieIsAdded ? "active" : ""
+        }`}
+      >
+        {movieIsAdded ? <SadFace /> : <Heart />}
+      </div>
+    </button>
   );
 };
 

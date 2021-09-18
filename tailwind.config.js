@@ -1,5 +1,13 @@
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: [
+      "./pages/**/*.{js,ts,jsx,tsx}",
+      "./components/**/*.{js,ts,jsx,tsx}",
+    ],
+    options: {
+      safelist: ["active"],
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -10,7 +18,7 @@ module.exports = {
         "omdb-gray-light": "silver",
       },
       gridTemplateColumns: {
-        "moviecard-container": "3fr 1fr",
+        "2-1fr": "1fr 1fr",
       },
       width: {
         "fit-content": "fit-content",

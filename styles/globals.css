@@ -24,53 +24,25 @@
   footer {
     @apply w-full absolute bottom-0 bg-omdb-gray-dark h-32;
   }
-
-  .view-source {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .view-source-arm {
-    transform-origin: 130px 106px;
+  .add-to-fav-button:hover span {
+    @apply text-gray-600;
   }
 
-  .view-source:hover .view-source-arm {
-    animation: wave 560ms ease-in-out;
+  .add-to-fav-button:hover .add-to-fav-icon.active {
+    @apply text-red-700;
   }
 
-  @keyframes wave {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    20% {
-      transform: rotate(-25deg);
-    }
-
-    40% {
-      transform: rotate(10deg);
-    }
-
-    60% {
-      transform: rotate(-25deg);
-    }
-
-    80% {
-      transform: rotate(10deg);
-    }
-
-    100% {
-      transform: rotate(0deg);
-    }
+  .add-to-fav-button:hover .add-to-fav-icon {
+    @apply text-red-700;
   }
 
-  @media (max-width: 500px) {
-    .view-source:hover .view-source-arm {
-      animation: none;
-    }
-
-    .view-source:hover .view-source-arm {
-      animation: wave 560ms ease-in-out;
-    }
+  .add-to-fav-icon.active {
+    @apply text-green-500;
+  }
+  .add-to-fav-icon {
+    @apply text-gray-500;
+  }
+  .omdb-button {
+    @apply grid place-items-center p-3 gap-x-2 grid-flow-col w-fit-content justify-self-center rounded-lg bg-gray-100 font-medium text-gray-500;
   }
 }

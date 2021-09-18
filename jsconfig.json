@@ -1,33 +1,12 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "rootDir": ".",
     "paths": {
       "@/components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["./utils/*"]
     }
   },
   "exclude": ["node_modules", ".cache", "dist", "out", ".next", "deprecated"]
 }
-
-// {
-//   "typeAcquisition": {
-//     "include": ["jest"]
-//   },
-//   "compilerOptions": {
-//     "module": "commonjs",
-//     "target": "es6",
-//     "baseUrl": ".",
-//     // "paths": {
-//     //   "../*": ["./components/*", "./lib/*"]
-//     // }
-//     "paths": {
-//       "@/components/*": ["components/*"],
-//       "@pages/*": ["pages/*"],
-//       "@hooks/*": ["hooks/*"],
-//       "@/lib/*": ["lib/*"]
-//     }
-//   },
-//   "include": ["./**/*"],
-//   "exclude": ["node_modules", ".cache", "dist", "out", ".next", "deprecated"]
-// }

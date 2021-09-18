@@ -1,11 +1,11 @@
-import Image from "next/image";
 import { array } from "prop-types";
 import Link from "next/link";
 
 import Pagination from "./Pagination";
 import PosterImage from "../PosterImage";
-import { PAGE_URL_LIST } from "utils/constants";
+
 import { Movie } from "../Icons";
+import { PAGE_URL_LIST } from "@/utils/constants";
 
 const MovieCardList = ({
   error,

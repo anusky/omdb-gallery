@@ -215,7 +215,7 @@ export const Imdb = () => (
 export const Heart = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="h-8 w-8"
+    className="h-6 w-6"
     viewBox="0 0 20 20"
     fill="currentColor"
   >
@@ -223,6 +223,22 @@ export const Heart = () => (
       fillRule="evenodd"
       d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
       clipRule="evenodd"
+    />
+  </svg>
+);
+export const SadFace = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
     />
   </svg>
 );

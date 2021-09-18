@@ -1,48 +1,38 @@
-import Link from "next/link";
+import { isEmpty } from "@/utils/generics";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { bool } from "prop-types";
+import { string } from "prop-types";
 
-import { ChevronRight } from "../Icons";
+import BreadcrumbLink from "./breadcrumb-link";
 
-const getBreadcrumbStructure = (slugStructure) => {
-  let result = [{ text: "Home", slug: "/" }, slugStructure];
+/**
+ * Slug structure containing the needed info to show it in the DOM.
+ * @typedef {Object} SlugStructure
+ * @property {String} SlugStructure.slug absolute url where it should poitn
+ * @property {String} SlugStructure.text text to show in the DOM
+ */
 
-  return result;
-};
+/**
+ *
+ * @param {SlugStructure} slugStructure
+ * @returns Array containing a set of slugs
+ */
+export const getBreadcrumbStructure = (slugStructure) => {
+  const defaultBreadcrumb = { text: "Home", slug: "/" };
+  if (isEmpty(slugStructure) || !slugStructure?.text || !slugStructure?.slug) {
+    return [defaultBreadcrumb];
+  }
 
-const BreadcrumbLink = ({ href, children, special, disabled, className }) => {
-  return (
-    <>
-      {disabled ? (
-        <span
-          className={`${className} capitalize text-omdb-gray-medium select-none font-medium`}
-        >
-          {children}
-        </span>
-      ) : (
-        <Link href={href}>
-          <a
-            className={`${className} capitalize  hover:text-omdb-gray-dark-2 font-medium`}
-          >
-            {children}
-          </a>
-        </Link>
-      )}
-      {!special && <ChevronRight className={className} />}
-    </>
-  );
-};
-BreadcrumbLink.propTypes = {
-  className: PropTypes.string,
-};
-BreadcrumbLink.defaultProps = {
-  className: "",
+  return [defaultBreadcrumb, slugStructure];
 };
 
 const Breadcrumb = ({ slugStructure }) => {
   const breadcrumb = getBreadcrumbStructure(slugStructure);
   return (
-    <div className="grid grid-flow-col w-fit-content place-items-center text-sm md:text-lg lg:text-base px-4 lg:px-5 xl:px-0">
+    <div
+      data-testid="breadcrumb-component"
+      className="grid grid-flow-col w-fit-content place-items-center text-sm md:text-lg lg:text-base px-4 lg:px-5 xl:px-0"
+    >
       <>
         {breadcrumb.map((el, index) => {
           return (
@@ -63,7 +53,11 @@ const Breadcrumb = ({ slugStructure }) => {
 };
 export default Breadcrumb;
 Breadcrumb.propTypes = {
-  slugStructure: PropTypes.object,
+  slugStructure: PropTypes.shape({
+    slug: string,
+    disabled: bool,
+    className: string,
+  }),
 };
 Breadcrumb.defaultProps = {
   slugStructure: {},

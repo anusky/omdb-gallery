@@ -56,3 +56,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3. Undo his remove action
    Please store your favourite movie list in a simple NodeJS server (you
    create) or local storage.
+
+## Things I would add
+
+- Viewed list

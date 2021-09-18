@@ -1,29 +1,22 @@
 import { TitleDescriptionPair } from "../MovieCard/TitleDescriptionPair";
 import PosterImage from "../PosterImage";
-import Link from "next/link";
-import { PAGE_URL_LIST } from "../../utils/constants";
+
 import AddToFavourites from "../AddToFavourites";
+import MovieLink from "../MovieLink";
 
 const FavouriteMovieCard = (props) => {
   return (
-    <div className="grid w-fit-content grid-cols-2 rounded-lg bg-gray-100 p-6">
-      <div>
+    <div className="grid w-fit-content rounded-lg overflow-hidden bg-gray-100 gap-y-8">
+      <div className="grid place-items-center py-4 relative gap-y-4">
+        <h1>{props.title}</h1>
         <PosterImage
-          className="h-60 w-full "
+          className="h-64 w-full"
           Poster={props.poster}
           Title={props.title}
         />
       </div>
-      <div className="grid">
-        <div className="grid">
-          <TitleDescriptionPair title="Title:" description={props.title} />
-          <TitleDescriptionPair title="Plot:" description={props.plot} />
-          <Link passHref href={PAGE_URL_LIST.getMovieUrlById(props.imdbID)}>
-            <a className="rounded-xl text-center h-fit-content w-fit-content px-4 py-1 bg-gray-600 font-body font-bold text-gray-50 text-lg">
-              Check movie
-            </a>
-          </Link>
-        </div>
+      <div className="grid grid-flow-col bg-gray-200 justify-around  place-items-center py-3 px-2 gap-x-4">
+        <MovieLink imdbID={props.imdbID} />
         <AddToFavourites {...props} />
       </div>
     </div>

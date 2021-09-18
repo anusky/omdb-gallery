@@ -17,4 +17,5 @@ export const PAGE_URL_LIST = {
   getMovieUrlById(movieId) {
     return this.MOVIES.replace(":id:", movieId);
   },
+  HOME: "/",
 };
