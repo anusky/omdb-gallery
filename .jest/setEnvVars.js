@@ -1,0 +1,1 @@
+process.env.NEXT_PUBLIC_OMDB_API_KEY = "123456";

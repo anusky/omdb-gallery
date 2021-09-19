@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@/utils/*": ["./utils/*"]
+    }
+  },
+  "exclude": ["node_modules", ".cache", "dist", "out", ".next", "deprecated"]
+}
