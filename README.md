@@ -80,5 +80,6 @@ create) or local storage.
 [x] Breadcrumbs
 [x] Navbar
 [x] SEO Meta Tags
+[x] Autocomplete selector interactive through keyboard
 
 - Viewed list
