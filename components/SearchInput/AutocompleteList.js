@@ -22,7 +22,7 @@ const AutocompleteList = ({
       const selectedImdbID = list[selected].imdbID;
       router.push(PAGE_URL_LIST.getMovieUrlById(selectedImdbID));
     }
-  }, [triggered]);
+  }, [triggered]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div
