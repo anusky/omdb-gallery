@@ -1,7 +1,7 @@
 import { array, number, bool, func } from "prop-types";
 import Link from "next/link";
 import { PAGE_URL_LIST } from "@/utils/constants";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 
 const AutocompleteList = ({
@@ -11,8 +11,21 @@ const AutocompleteList = ({
   triggered,
 }) => {
   const router = useRouter();
-
+  const ref = useRef();
   const [currentSelected, setSelected] = useState(selected);
+
+  const handleClickOutside = (event) => {
+    if (ref && !ref.current.contains(event.target)) {
+      hidAutocompleteList();
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   useEffect(() => {
     setSelected(selected);
   }, [selected]);
@@ -27,6 +40,7 @@ const AutocompleteList = ({
   return (
     <div
       data-testid="autocomplete-list-component"
+      ref={ref}
       onMouseLeave={hidAutocompleteList}
       className="absolute bg-white rounded-md shadow border-2 border-t-0 z-10"
     >

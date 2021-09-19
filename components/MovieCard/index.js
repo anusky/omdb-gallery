@@ -37,13 +37,20 @@ const MovieCard = (props) => {
     >
       <div className="lg:p-4 grid gap-y-8 lg:gap-y-0 lg:grid-cols-3">
         <div className="bg-gray-100 lg:bg-transparent p-4 lg:p-0 grid order-2 lg:order-1 lg:col-span-2 lg:col-start-1 gap-y-3">
-          <div className="inline-flex place-items-center gap-x-2">
+          <div className="grid md:inline-flex place-items-center gap-x-2">
             <h1>
               {titleAndYear}
-              <span className="text-omdb-gray-light">[{Runtime}]</span>
+              <span className="hidden md:block text-omdb-gray-light">
+                [{Runtime}]
+              </span>
             </h1>
-            <IMDBTag />
-            <RatedTag rated={Rated} />
+            <div className="inline-flex flex-wrap">
+              <span className="md:hidden text-omdb-gray-light">
+                [{Runtime}]
+              </span>
+              <IMDBTag />
+              <RatedTag rated={Rated} />
+            </div>
           </div>
 
           <Genres genres={Genre} />

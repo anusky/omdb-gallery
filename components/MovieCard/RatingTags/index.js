@@ -10,7 +10,7 @@ export const RatingTags = ({ ratingList }) => {
     !isEmpty(ratingList) && (
       <div
         data-testid="rating-component"
-        className="grid grid-flow-col gap-x-4"
+        className="grid md:grid-flow-col gap-y-2 md:gap-x-4 md:gap-y-0"
       >
         <span className="font-bold">Ratings:</span>
         {ratingList.map((rating, index) => (
