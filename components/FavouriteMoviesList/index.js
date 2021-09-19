@@ -8,7 +8,7 @@ const FavouriteMoviesList = ({ favList }) => {
   return (
     <div
       data-testid="fav-list-component"
-      className="grid grid-flow-col gap-x-8 gap-y-8"
+      className="grid place-items-center lg:place-items-start md:grid-cols-2 lg:grid-flow-col gap-x-8 gap-y-8"
     >
       {!isEmpty(favList) ? (
         <>

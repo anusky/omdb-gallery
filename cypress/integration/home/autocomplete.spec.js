@@ -44,6 +44,15 @@ const minimumRequirementsDevices = () => {
         cy.url().should("include", href);
       });
   });
+
+  it.only("When user clicks outside autocomplete, it should hide", () => {
+    cy.get("@focusInput").clear().type(`bat`);
+    /**
+     * Foe example: let's pretend user clicks somewhere else
+     */
+    cy.findByTestId("movie-card-list-container").click();
+    cy.findByTestId("autocomplete-list-component").should("not.exist");
+  });
 };
 
 context(

@@ -22,7 +22,6 @@ export default function FavouitesPage() {
           }}
         />
         <FavouriteMoviesList favList={favList} />
-        {/* <pre>{JSON.stringify(favList, null, 2)}</pre> */}
       </section>
     </Layout>
   );
