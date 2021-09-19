@@ -24,9 +24,6 @@ const Pagination = ({
   useEffect(() => {
     if (itemsPerPage > 0) {
       const maxPages = Math.ceil(maxItems / itemsPerPage);
-      console.log("itemsPerPage ", itemsPerPage);
-      console.log("maxItems ", maxItems);
-      console.log("maxPages ", maxPages);
       setMaxPages(maxPages);
       if (maxPages > 6) {
         setPagesArray([Array(3).fill(0), Array(3).fill(0)]);

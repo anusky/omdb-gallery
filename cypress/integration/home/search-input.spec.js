@@ -60,6 +60,33 @@ const minimumRequirementsDevices = () => {
 
     cy.findByTestId("autocomplete-list-component").should("not.exist");
   });
+
+  it("When user presses `Esc` key, autocomplete should hide", () => {
+    cy.get("@focusInput").clear().type(`bat`);
+
+    cy.findByTestId("autocomplete-list-component").should("exist");
+
+    cy.get("@focusInput").clear().type(`{esc}`);
+    cy.findByTestId("autocomplete-list-component").should("not.exist");
+  });
+
+  it("When user presses `Arrow Down` key, autocomplete should show", () => {
+    cy.get("@focusInput").clear().type(`bat{esc}`);
+
+    cy.findByTestId("autocomplete-list-component").should("not.exist");
+
+    cy.get("@focusInput").type(`{downarrow}`);
+    cy.findByTestId("autocomplete-list-component").should("exist");
+  });
+
+  it("When user presses `Arrow Up` key, autocomplete should show", () => {
+    cy.get("@focusInput").clear().type(`bat{esc}`);
+
+    cy.findByTestId("autocomplete-list-component").should("not.exist");
+
+    cy.get("@focusInput").type(`{uparrow}`);
+    cy.findByTestId("autocomplete-list-component").should("exist");
+  });
 };
 
 context(

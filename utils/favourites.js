@@ -14,7 +14,6 @@ const getLocalStorageItemByKey = (itemKey) => {
 };
 
 const setLocalStorageItemByKey = (itemKey) => (data) => {
-  console.log("itemKey ", itemKey);
   checkLocalStorageExists() &&
     window.localStorage.setItem(itemKey, JSON.stringify(data));
 };

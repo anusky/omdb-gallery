@@ -15,8 +15,8 @@ const minimumRequirementsDevices = () => {
     // cy.visit("/movies/tt0102164");
   });
 
-  it("Favourite movies list shouls be empty ", () => {
-    cy.visit("movies/favourites");
+  it("Favourite movies list should be empty ", () => {
+    cy.visit("/favourites");
     expect(localStorage.getItem("favourite-movies")).to.be.null;
     cy.findByTestId("fav-list-component")
       .find("h1")

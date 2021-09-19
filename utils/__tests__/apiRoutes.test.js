@@ -13,11 +13,13 @@ describe("getSearchUrl functionality", () => {
 
 describe("getSearchUrl functionality", () => {
   it("should return omdbapi url even when no params are sent", () => {
-    expect(getMovieUrl()).toBe("https://omdbapi.com/?i=&apikey=123456");
+    expect(getMovieUrl()).toBe(
+      "https://omdbapi.com/?i=&plot=full&apikey=123456"
+    );
   });
   it("should return omdbapi url containing params sent", () => {
     expect(getMovieUrl("id-test")).toBe(
-      "https://omdbapi.com/?i=id-test&apikey=123456"
+      "https://omdbapi.com/?i=id-test&plot=full&apikey=123456"
     );
   });
 });
