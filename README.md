@@ -75,8 +75,11 @@ Open [https://ombd-gallery.netlify.app/](https://ombd-gallery.netlify.app/) with
 Please store your favourite movie list in a simple NodeJS server (you
 create) or local storage.
 
-## Things I would add
+## Things I would add or I added
+
+[x] Breadcrumbs
+[x] Navbar
+[x] SEO Meta Tags
+[x] Autocomplete selector interactive through keyboard
 
 - Viewed list
-- Breadcrumbs
-- Navbar
