@@ -84,3 +84,5 @@ create) or local storage.
 
 - Viewed list
 - wai-aria tags
+- Add JSDocs to engage with Github Documentation
+- Storybooks in order to atomize and customize all components so they can be re-used
