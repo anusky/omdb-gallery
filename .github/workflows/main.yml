@@ -1,0 +1,31 @@
+name: Cypress Tests
+
+on: [pull_request]
+
+jobs:
+  jest-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Test using Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+      - run: yarn install
+      - run: yarn test:ci
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install NPM dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn build
+          start: yarn start
+          config: "baseUrl=http://localhost:3000"
+        env:
+          NEXT_PUBLIC_OMDB_API_KEY: ${{secrets.NEXT_PUBLIC_OMDB_API_KEY}}
+          NEXT_PUBLIC_ENVIRONMENT: ${{secrets.NEXT_PUBLIC_ENVIRONMENT}}
