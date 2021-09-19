@@ -2,6 +2,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer data-testid="footer-component ">
+      Check this project in Github
       <a
         href="https://github.com/anusky/omdb-gallery"
         target="_blank"
