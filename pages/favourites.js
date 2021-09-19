@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import FavouriteMoviesList from "@/components/FavouriteMoviesList";
+import { ICON_ID_LIST } from "@/components/Icons";
 import Layout from "@/components/Layout";
 import { getFavouriteMoviesList } from "@/utils/favourites";
 import { useEffect, useState } from "react";
@@ -16,6 +17,7 @@ export default function FavouitesPage() {
           slugStructure={{
             text: `My Favourites`,
             slug: `/favourites`,
+            icon: ICON_ID_LIST.HEART,
             disabled: true,
           }}
         />

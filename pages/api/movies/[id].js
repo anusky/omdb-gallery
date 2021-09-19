@@ -4,6 +4,7 @@ import { getMovieUrl } from "../../../utils/apiRoutes";
 
 export default async function handler(req, res) {
   try {
+    console.log("hola");
     const URL = getMovieUrl(req.query.id);
     const response = await fetch(URL).then((res) => res.json());
 

@@ -2,6 +2,7 @@ import { isEmpty } from "@/utils/generics";
 import PropTypes from "prop-types";
 import { bool } from "prop-types";
 import { string } from "prop-types";
+import { DynamicIcon, ICON_ID_LIST } from "../Icons";
 
 import BreadcrumbLink from "./breadcrumb-link";
 
@@ -10,6 +11,7 @@ import BreadcrumbLink from "./breadcrumb-link";
  * @typedef {Object} SlugStructure
  * @property {String} SlugStructure.slug absolute url where it should poitn
  * @property {String} SlugStructure.text text to show in the DOM
+ * @property {String?} SlugStructure.icon iconId to show in the DOM
  */
 
 /**
@@ -18,7 +20,11 @@ import BreadcrumbLink from "./breadcrumb-link";
  * @returns Array containing a set of slugs
  */
 export const getBreadcrumbStructure = (slugStructure) => {
-  const defaultBreadcrumb = { text: "Home", slug: "/" };
+  const defaultBreadcrumb = {
+    text: "Home",
+    slug: "/",
+    icon: ICON_ID_LIST.HOME,
+  };
   if (isEmpty(slugStructure) || !slugStructure?.text || !slugStructure?.slug) {
     return [defaultBreadcrumb];
   }
@@ -43,7 +49,7 @@ const Breadcrumb = ({ slugStructure }) => {
               disabled={el.disabled}
               className={el.className}
             >
-              {el.text}
+              <DynamicIcon iconId={el.icon} /> {el.text}
             </BreadcrumbLink>
           );
         })}

@@ -7,14 +7,14 @@ const BreadcrumbLink = ({ href, children, special, disabled, className }) => {
     <>
       {disabled ? (
         <span
-          className={`${className} capitalize text-omdb-gray-medium select-none font-medium`}
+          className={`inline-flex ${className} capitalize text-omdb-gray-medium select-none font-medium`}
         >
           {children}
         </span>
       ) : (
         <Link href={href}>
           <a
-            className={`${className} capitalize  hover:text-omdb-gray-dark-2 font-medium`}
+            className={`inline-flex ${className} capitalize  hover:text-omdb-gray-dark-2 font-medium`}
           >
             {children}
           </a>
