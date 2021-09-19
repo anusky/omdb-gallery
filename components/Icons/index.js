@@ -275,7 +275,6 @@ export const DynamicIcon = ({ iconId }) => {
     case "heart":
       return <Heart />;
     case "home":
-    default:
       return <Home />;
   }
 };
