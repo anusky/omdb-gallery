@@ -31,3 +31,17 @@ context(
   },
   minimumRequirementsDevices
 );
+
+context(
+  "Desktop - movie page - bad page",
+  {
+    viewportWidth: 1536,
+    viewportHeight: 960,
+  },
+  () => {
+    it.only("When user navigates to a wrong movie page, it should be redirected to 404 page", () => {
+      cy.visit("/movies/test");
+      cy.url().should("include", "/404");
+    });
+  }
+);

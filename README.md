@@ -86,3 +86,4 @@ create) or local storage.
 - wai-aria tags
 - Add JSDocs to engage with Github Documentation
 - Storybooks in order to atomize and customize all components so they can be re-used
+- Cypress responsive tests for other devices than Desktop (XL)
