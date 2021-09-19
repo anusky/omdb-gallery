@@ -19,7 +19,7 @@ const PaginationInsertPageInput = ({
   ) : (
     <form
       data-testid="pagination-insert-page-input-form"
-      className="inline-flex border border-gray-300 bg-white text-sm font-medium text-g4m-gray-dark-2 hover:bg-gray-50 select-none"
+      className="grid grid-flow-col border border-gray-300 bg-white text-sm font-medium text-g4m-gray-dark-2 hover:bg-gray-50 select-none"
       onSubmit={(event) => {
         event.preventDefault();
         handlePageChange(Number(event.target.insertedPage.value));
