@@ -40,7 +40,7 @@ const SearchInput = () => {
 
   useEffect(() => {
     checkListShouldBeVisible(data);
-  }, [data]);
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleOnKeyPress = (event) => {
     var key = event.which || event.keyCode;
