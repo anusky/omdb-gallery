@@ -1,3 +1,4 @@
+import { RESULTS_PER_PAGE } from "@/utils/constants";
 import { useEffect, useState } from "react";
 import useSwr from "swr";
 import MovieCardList from "../MovieCardList";
@@ -29,10 +30,9 @@ const SearchInput = () => {
   );
 
   const checkListShouldBeVisible = (data) => {
-    console.log("que  pasa ", data);
     if (data?.Search?.length > 0) {
       setListVisible(true);
-      setResults([data.Search.length, Number(data.totalResults), currentPage]);
+      setResults([RESULTS_PER_PAGE, Number(data.totalResults), currentPage]);
     } else {
       setListVisible(false);
     }

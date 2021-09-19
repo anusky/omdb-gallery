@@ -18,5 +18,10 @@ export const PAGE_URL_LIST = {
     return this.MOVIES.replace(":id:", movieId);
   },
   HOME: "/",
-  FAVOURITES: "/movies/favourites",
+  FAVOURITES: "/favourites",
 };
+
+/**
+ * By default OMDB returns 10 results per page
+ */
+export const RESULTS_PER_PAGE = 10;

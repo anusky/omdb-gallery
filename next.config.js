@@ -13,11 +13,6 @@ module.exports = {
     ];
   },
   async rewrites() {
-    return [
-      // {
-      //   source: "/favourites",
-      //   destination: "/api/movies/favourites",
-      // },
-    ];
+    return [];
   },
 };

@@ -9,7 +9,6 @@ const AutocompleteList = ({ list, hidAutocompleteList }) => {
       onMouseLeave={hidAutocompleteList}
       className="absolute bg-white rounded-md shadow border-2 border-t-0 z-10"
     >
-      topotamadre
       <ul className="grid gap-y-2">
         {list.map((el, index) => {
           const { Title, imdbID } = el;

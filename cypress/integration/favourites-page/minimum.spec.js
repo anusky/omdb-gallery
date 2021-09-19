@@ -36,7 +36,7 @@ const minimumRequirementsDevices = () => {
   });
 
   it("Favourite movies list should now not be empty ", () => {
-    cy.visit("movies/favourites");
+    cy.visit("/favourites");
 
     cy.findAllByTestId("favourite-movie-card").should("exist");
     cy.findByText("Johnny Stecchino");

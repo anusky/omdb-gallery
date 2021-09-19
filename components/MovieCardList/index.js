@@ -1,11 +1,11 @@
 import { array } from "prop-types";
 
-import Pagination from "./Pagination";
 import PosterImage from "../PosterImage";
 
 import { Movie } from "../Icons";
 
 import MovieLink from "../MovieLink";
+import Pagination from "../pagination";
 
 const MovieCardList = ({
   error,
@@ -16,7 +16,7 @@ const MovieCardList = ({
   handlePageChange,
 }) => {
   return (
-    <div data-testid="movie-card-list-container" className="px-6">
+    <div data-testid="movie-card-list-container" className="px-6 grid gap-y-8">
       {error && <div className="">{error}</div>}
       <div className="grid lg:grid-cols-2 gap-4">
         {movieList.map((el, index) => (
@@ -45,7 +45,7 @@ const MovieCardList = ({
         ))}
       </div>
       {movieList.length > 0 && (
-        <div className="grid">
+        <div className="grid ">
           <Pagination
             currentPage={currentPage}
             itemsPerPage={itemsPerPage}

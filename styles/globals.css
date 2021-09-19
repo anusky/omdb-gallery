@@ -43,6 +43,18 @@
     @apply text-gray-500;
   }
   .omdb-button {
-    @apply grid place-items-center p-3 gap-x-2 grid-flow-col w-fit-content justify-self-center rounded-lg bg-gray-100 font-medium text-gray-500;
+    @apply grid place-items-center p-3 gap-x-2 grid-flow-col w-fit-content justify-self-center rounded-lg bg-gray-200 hover:bg-gray-300 font-medium text-gray-500;
+  }
+  .omdb-pagination-number {
+    @apply relative inline-flex items-center px-4 py-2 border border-gray-300  text-sm font-medium text-omdb-gray-dark-2 select-none;
+  }
+  .omdb-pagination-single {
+    @apply relative inline-flex disabled:cursor-auto disabled:bg-omdb-gray-light  disabled:text-white items-center px-2 py-2 border border-gray-300 bg-white text-sm font-medium text-omdb-gray-dark-2 hover:bg-gray-50 select-none;
+  }
+  .omdb-pagination-single__prev {
+    @apply omdb-pagination-single rounded-l-md;
+  }
+  .omdb-pagination-single__next {
+    @apply omdb-pagination-single rounded-r-md;
   }
 }

@@ -1,8 +1,8 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import FavouriteMoviesList from "@/components/FavouriteMoviesList";
 import Layout from "@/components/Layout";
+import { getFavouriteMoviesList } from "@/utils/favourites";
 import { useEffect, useState } from "react";
-import { getFavouriteMoviesList } from "../../../utils/favourites";
 
 export default function FavouitesPage() {
   const [favList, setFavList] = useState([]);

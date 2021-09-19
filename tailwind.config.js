@@ -33,7 +33,12 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backgroundColor: ["checked", "disabled", "even", "odd"],
+      borderColor: ["checked", "hover"],
+      textColor: ["checked", "disabled"],
+      cursor: ["disabled"],
+    },
   },
   plugins: [],
 };
