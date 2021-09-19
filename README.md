@@ -83,3 +83,4 @@ create) or local storage.
 [x] Autocomplete selector interactive through keyboard
 
 - Viewed list
+- wai-aria tags
