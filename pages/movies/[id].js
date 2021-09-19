@@ -4,6 +4,7 @@ import Loader from "@/components/Loader";
 import MetaTags from "@/components/MetaTags";
 import MovieCard from "@/components/MovieCard";
 import { useRouter } from "next/dist/client/router";
+import { useEffect } from "react";
 
 import useSwr from "swr";
 
@@ -15,9 +16,15 @@ export default function MoviesPage({}) {
     router.query.id ? `/api/movies/${router.query.id}` : null,
     fetcher
   );
+
+  useEffect(() => {
+    if (data?.Error) {
+      router.push("/404");
+    }
+  }, [data]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <Layout>
-      {data ? (
+      {data && !data.Error ? (
         <section className="container mx-auto p-6 grid gap-y-4">
           <MetaTags
             customMetaTags={{

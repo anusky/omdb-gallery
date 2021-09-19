@@ -12,7 +12,7 @@ const PaginationInsertPageInput = ({
     <button
       data-testid="pagination-insert-page-button"
       onClick={handleFormVisibility}
-      className="relative inline-flex items-center px-2 py-2  border border-gray-300 bg-white text-sm font-medium text-g4m-gray-dark-2 hover:bg-gray-50 select-none"
+      className="hidden relative md:inline-flex items-center px-2 py-2  border border-gray-300 bg-white text-sm font-medium text-g4m-gray-dark-2 hover:bg-gray-50 select-none"
     >
       ...
     </button>

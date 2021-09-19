@@ -83,3 +83,6 @@ create) or local storage.
 [x] Autocomplete selector interactive through keyboard
 
 - Viewed list
+- wai-aria tags
+- Add JSDocs to engage with Github Documentation
+- Storybooks in order to atomize and customize all components so they can be re-used

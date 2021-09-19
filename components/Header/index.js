@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <nav
       data-testid="header-component"
-      className="h-20 bg-omdb-gray-light-2 grid place-items-center"
+      className="h-20 bg-omdb-gray-dark grid place-items-center"
     >
-      <ul className="grid grid-flow-col gap-4">
+      <ul className="grid grid-flow-col gap-y-4 gap-x-6">
         <li>
           <HeaderLink text="Home" href={PAGE_URL_LIST.HOME} />
         </li>

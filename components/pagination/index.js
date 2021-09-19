@@ -43,7 +43,7 @@ const Pagination = ({
   return (
     <div
       data-testid="pagination-component"
-      className="bg-white  hidden sm:flex-1 sm:flex sm:items-center sm:justify-between border-t border-gray-200  text-g4m-gray-dark-2 py-4"
+      className="bg-white  sm:flex-1 sm:flex sm:items-center sm:justify-between border-t border-gray-200  text-g4m-gray-dark-2 py-4"
     >
       <div>
         <p className="text-omdb-gray-dark-2 grid grid-flow-col gap-x-1">
@@ -84,6 +84,7 @@ const Pagination = ({
         >
           <span className="sr-only">{"previous"}</span>
           <ChevronLeft />
+          <span className="md:hidden">Previous</span>
         </button>
         {firstPagesArray.map((el, index) => {
           const currentIndex = index + 1;
@@ -123,6 +124,7 @@ const Pagination = ({
           disabled={currentPage >= maxPages}
         >
           <span className="sr-only">{"next"}</span>
+          <span className="md:hidden">Next</span>
           <ChevronRight />
         </button>
       </nav>

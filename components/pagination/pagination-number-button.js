@@ -1,7 +1,7 @@
 import { bool, func, number } from "prop-types";
 
 const PaginationNumberButton = ({ active, handleOnPageChange, pageToJump }) => {
-  const className = `omdb-pagination-number ${
+  const className = `hidden md:block omdb-pagination-number ${
     active
       ? "bg-omdb-gray-light-2 cursor-auto"
       : "bg-white hover:bg-omdb-gray-light-2"
