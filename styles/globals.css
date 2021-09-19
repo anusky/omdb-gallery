@@ -22,7 +22,10 @@
     @apply mb-64;
   }
   footer {
-    @apply w-full absolute bottom-0 bg-omdb-gray-dark h-32;
+    @apply w-full absolute bottom-0 bg-omdb-gray-dark h-32 p-8;
+  }
+  footer a {
+    @apply text-gray-50 hover:text-gray-300 grid grid-flow-col gap-x-4 place-items-center w-fit-content;
   }
   .add-to-fav-button:hover span {
     @apply text-gray-600;
