@@ -55,35 +55,35 @@ Open [https://ombd-gallery.netlify.app/](https://ombd-gallery.netlify.app/) with
 
 ### Create a simple movie browser where user can
 
-[x] Search for movies
-[x] Search can start with just 2 letters
-[x] Search is autocomplete
-[x] The result is using pagination
-[x] Please follow the design layout as above using styling
+- [x] Search for movies
+- [x] Search can start with just 2 letters
+- [x] Search is autocomplete
+- [x] The result is using pagination
+- [x] Please follow the design layout as above using styling
 
 ### Create details page where user can
 
-[x] Click on the selected movie from the list and see movie details
-[x] Each movie will have details, poster, and add to fav. Button
-[x] Fav. Button will add a move to your favourites list
+- [x] Click on the selected movie from the list and see movie details
+- [x] Each movie will have details, poster, and add to fav. Button
+- [x] Fav. Button will add a move to your favourites list
 
 ### Create favourites list page where
 
-[x] User can see list of previously added movies
-[x] Remove given movie from favourites
-[x] Undo his remove action
+- [x] User can see list of previously added movies
+- [x] Remove given movie from favourites
+- [x] Undo his remove action
 Please store your favourite movie list in a simple NodeJS server (you
 create) or local storage.
 
 ## Things I would add or I added
 
-[x] Breadcrumbs
-[x] Navbar
-[x] SEO Meta Tags
-[x] Autocomplete selector interactive through keyboard
+- [x] Breadcrumbs
+- [x] Navbar
+- [x] SEO Meta Tags
+- [x] Autocomplete selector interactive through keyboard
 
-- Viewed list
-- wai-aria tags
-- Add JSDocs to engage with Github Documentation
-- Storybooks in order to atomize and customize all components so they can be re-used
-- Cypress responsive tests for other devices than Desktop (XL)
+- [] Viewed list
+- [] wai-aria tags
+- [] Add JSDocs to engage with Github Documentation
+- [] Storybooks in order to atomize and customize all components so they can be re-used
+- [] Cypress responsive tests for other devices than Desktop (XL)
