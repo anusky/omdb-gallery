@@ -49,7 +49,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deploy on Netlify
 
 You can find this application deployed under Netlify.
-Open [https://ombd-gallery.netlify.app/](https://ombd-gallery.netlify.app/) with your browser to see it.
+Open [https://omdb-gallery.netlify.app/](https://omdb-gallery.netlify.app/) with your browser to see it.
 
 ## TODO List
 
